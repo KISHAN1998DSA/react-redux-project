@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.btn-wrapper button{
+  border: none;
+  border-radius: 8px;
+  background-color: azure;
+  color: #282c34;
+  padding: 10px;
+  cursor: pointer;
+}
+.icon-wrapper img{
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  color: white;
+}
