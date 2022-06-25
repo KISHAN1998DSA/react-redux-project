@@ -12,6 +12,7 @@ export const addToCard = (data) => {
 export const setAddToCard = (data,apiData) => {
   return {
     type: ADD_TO_CARD,
-    data: {data,apiData},
+    data,
+    apiData
   };
 };

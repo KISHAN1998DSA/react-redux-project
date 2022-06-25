@@ -1,11 +1,12 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import { addToCard } from "../services/action/action";
 
 
 const Home = () => {
   const dispatch=useDispatch();
-    console.log("home");
+  const _apiData = useSelector((state) => state.cardItems);
+    console.log("home",_apiData);
   return (
     <div>
       <h1>Home components</h1>
