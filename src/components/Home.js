@@ -1,7 +1,11 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { addToCard } from "../services/action/action";
 
-const Home = (props) => {
-    console.log("home",props);
+
+const Home = () => {
+  const dispatch=useDispatch();
+    console.log("home");
   return (
     <div>
       <h1>Home components</h1>
@@ -19,7 +23,8 @@ const Home = (props) => {
           <span>$1200</span>
         </div>
         <div className="btn-wrapper">
-          <button onClick={()=>props.addToCardHandler({price:1000,name:'Iphone 12'})}> Add To Card</button>
+          {/* <button onClick={()=>props.addToCardHandler({price:1000,name:'Iphone 12'})}> Add To Card</button> */}
+          <button onClick={()=>dispatch(addToCard({price:1000,name:'Iphone 12'}))}> Add To Card</button>
         </div>
       </div>
     </div>
