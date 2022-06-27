@@ -60,3 +60,7 @@
   top: 30px;
   right: 50px;
 }
+.card-wrapper{
+  border: 4px #61dafb solid;
+  padding: 10px;
+}
