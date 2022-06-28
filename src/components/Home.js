@@ -39,7 +39,7 @@ const Home = () => {
                     className="text-center mr-3"
                     onClick={()=>dispatch(addToCard({pro}))}
                   >
-                    Add To Card
+                    Add To Cart
                   </Button>
                   <NavLink to={"/cardDetail/"+pro.id} className="text-dark">Detail..</NavLink>
                 </Card.Body>

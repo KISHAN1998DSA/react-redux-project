@@ -1,2 +1,4 @@
 export const ADD_TO_CARD = "ADD_TO_CARD";
 export const GET_PRODUCT_DATA = "GET_PRODUCT_DATA";
+export const REMOVE_TO_CART = "REMOVE_TO_CART";
+export const REMOVE_CART_ITEM = "REMOVE_CART_ITEM";
