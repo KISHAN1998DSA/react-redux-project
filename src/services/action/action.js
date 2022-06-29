@@ -1,13 +1,13 @@
-import { ADD_TO_CARD, REMOVE_TO_CART, REMOVE_CART_ITEM } from "../constant";
-export const addToCard = (data) => {
+import { ADD_TO_CART, REMOVE_TO_CART, REMOVE_CART_ITEM } from "../constant";
+export const addToCart = (data) => {
   console.log("Action", data.pro);
   return {
-    type: ADD_TO_CARD,
+    type: ADD_TO_CART,
     data: data.pro,
   };
 };
 
-export const delete_item = (removeItemId) => {
+export const deleteItem = (removeItemId) => {
   console.log("Action delete", removeItemId);
   return {
     type: REMOVE_TO_CART,

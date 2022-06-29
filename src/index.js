@@ -13,13 +13,13 @@ import { BrowserRouter } from "react-router-dom";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-  <React.StrictMode>
-    <StyledEngineProvider>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </StyledEngineProvider>
-  </React.StrictMode>
+    <React.StrictMode>
+      <StyledEngineProvider>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </StyledEngineProvider>
+    </React.StrictMode>
   </BrowserRouter>
 );
 

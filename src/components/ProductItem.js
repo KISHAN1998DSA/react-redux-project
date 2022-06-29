@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 import { Button, Card } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { addToCard } from "../services/action/action";
+import { addToCart } from "../services/action/action";
 
 const ProductItem = ({
   productTitle,
@@ -25,7 +25,7 @@ const ProductItem = ({
         <Card.Body>
           <Card.Title>{productTitle.substring(0, 15)}</Card.Title>
           <Card.Text>Price : {productPrice}</Card.Text>
-          <Button variant="primary" className="text-center" onClick={dispatch(addToCard({productId}))}>
+          <Button variant="primary" className="text-center" onClick={() => dispatch(addToCart({productId}))}>
             Add To Card
           </Button>
         </Card.Body>

@@ -1,12 +1,12 @@
-import { ADD_TO_CARD, REMOVE_TO_CART, REMOVE_CART_ITEM } from "../constant";
+import { ADD_TO_CART, REMOVE_TO_CART, REMOVE_CART_ITEM } from "../constant";
 const initialState = {
   cardData: [],
 };
 export default function cardItems(state = initialState, action) {
   switch (action.type) {
-    case ADD_TO_CARD:
+    case ADD_TO_CART:
       const addItem = state.cardData.findIndex(
-        (iteam) => iteam.id === action.data.id
+        (item) => item.id === action.data.id
       );
       console.log(addItem, "AddItem index");
       if (addItem >= 0) {

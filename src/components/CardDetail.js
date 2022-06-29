@@ -3,7 +3,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import Table from "react-bootstrap/Table";
 import Rating from "@mui/material/Rating";
-import { addToCard } from "../services/action/action";
+import { addToCart } from "../services/action/action";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "react-bootstrap";
 
@@ -17,7 +17,7 @@ const CardDetail = () => {
   const data = useSelector((state) => state.productsItems);
 
   const pro = data.productData.find((obj) => {
-    return obj.id == param.id;
+    return obj.id === parseInt(param.id);
   });
 
 
@@ -62,13 +62,13 @@ const CardDetail = () => {
                     <strong>Reviews : </strong> {pro.rating.count}
                   </p>
                   <p>
-                    <strong>Quantity : </strong> {pro.qty}
+                    
                   </p>
                   <p>
                   <Button
                     variant="primary"
                     className="text-center mr-3"
-                    onClick={()=>dispatch(addToCard({pro}))}
+                    onClick={()=>dispatch(addToCart({pro}))}
                   >
                     Add To Cart
                   </Button>

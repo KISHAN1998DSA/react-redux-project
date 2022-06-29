@@ -7,14 +7,16 @@ import CloseIcon from "@mui/icons-material/Close";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useDispatch, useSelector } from "react-redux";
 import "./style.css";
-import { delete_item } from "../services/action/action";
-import { addToCard,removeCartItem } from "../services/action/action";
+import { deleteItem } from "../services/action/action";
+import { addToCart,removeCartItem } from "../services/action/action";
 import { useMemo, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Header = () => {
 
   const getdata = useSelector((state) => state.cardItems.cardData);
-  console.log("Header", getdata);
+  // console.log("Header", getdata);
   //Data Dispatch
   const dispatch = useDispatch();
   //oioas
@@ -30,11 +32,12 @@ const Header = () => {
   //Remove Quantity
   const removeCart=(cartId)=>{
     dispatch(removeCartItem(cartId));
+
   }
 
   //Delete Items
   const del = (id) => {
-    dispatch(delete_item(id));
+    dispatch(deleteItem(id));
   };
 
   //Total Price
@@ -57,11 +60,12 @@ const Header = () => {
     <>
       <Navbar bg="dark" variant="dark" style={{ height: "60px" }}>
         <Container>
-          <NavLink to="/" className="text-light text-decoration-none">
-            All Product
-          </NavLink>
 
-          <Nav class Name="me-auto">
+          <Nav className="me-auto">
+            <NavLink to="/home" className="text-light text-decoration-none">
+              All Product
+            </NavLink>
+            &nbsp;&nbsp;&nbsp;
             <NavLink
               to="/cardDetail"
               className="text-light text-decoration-none"
@@ -125,7 +129,7 @@ const Header = () => {
                           </td>
                           <td>
                             <p>{pro.title}</p>
-                            <p>Price : ₹{pro.price * pro.qty}</p>
+                            <p>Price : ₹{pro.price}</p>
                             <p>Quantity : {pro.qty}</p>
                           </td>
 
@@ -143,9 +147,10 @@ const Header = () => {
                             >-</Button>
                              <strong> {pro.qty} </strong>
                              <Button className="btn btn-dark" size="sm"
-                               onClick={()=>dispatch(addToCard({pro}))}
+                               onClick={()=>dispatch(addToCart({pro}))}
                              >+</Button>
                             </p>
+                            <p>SubTotal : ₹{pro.price * pro.qty}</p>
                           </td>
                         </tr>
                       </>
